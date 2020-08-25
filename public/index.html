@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link type='text/css' rel="stylesheet" href='style.css'>
+</head>
+<body class='body'>
+    <div id='header'>
+        <h1>Sevens</h1>
+        <h2 id='welcome'>User</h2>
+        <button id='leaveButton' onclick='leave()'>Leave</button>
+    </div>
+    <div id='joker' class='joker'>&#127199;</div>
+    <div id='opponents'></div><br>
+    <div id='ask' onclick='askForCard()'>Ask for card</div>
+    <div id='giveCard'>Player needs a card</div>
+    <div id='cardLayout'>
+        <!-- <div id='highlight'></div> -->
+        <div id='spades' class='suitRow'>
+            <div id='Aspade' onmouseup='cardPlaced(id)'>A&spades;</div>
+            <div id='twospade' onmouseup='cardPlaced(id)'>2&spades;</div>
+            <div id='threespade' onmouseup='cardPlaced(id)'>3&spades;</div>
+            <div id='fourspade' onmouseup='cardPlaced(id)'>4&spades;</div>
+            <div id='fivespade' onmouseup='cardPlaced(id)'>5&spades;</div>
+            <div id='sixspade' onmouseup='cardPlaced(id)'>6&spades;</div>
+            <div id='sevenspade' class='sev' onmouseup='cardPlaced(id)'>7&spades;</div>
+            <div id='eightspade' onmouseup='cardPlaced(id)'>8&spades;</div>
+            <div id='ninespade' onmouseup='cardPlaced(id)'>9&spades;</div>
+            <div id='tenspade' onmouseup='cardPlaced(id)'>10&spades;</div>
+            <div id='Jspade' onmouseup='cardPlaced(id)'>J&spades;</div>
+            <div id='Qspade' onmouseup='cardPlaced(id)'>Q&spades;</div>
+            <div id='Kspade' onmouseup='cardPlaced(id)'>K&spades;</div>
+        </div><br>
+        <div id='hearts' class='suitRow' >
+            <div id='Aheart' onmouseup='cardPlaced(id)'>A&hearts;</div>
+            <div id='twoheart' onmouseup='cardPlaced(id)'>2&hearts;</div>
+            <div id='threeheart' onmouseup='cardPlaced(id)'>3&hearts;</div>
+            <div id='fourheart' onmouseup='cardPlaced(id)'>4&hearts;</div>
+            <div id='fiveheart' onmouseup='cardPlaced(id)'>5&hearts;</div>
+            <div id='sixheart' onmouseup='cardPlaced(id)'>6&hearts;</div>
+            <div id='sevenheart' class='sev' onmouseup='cardPlaced(id)'>7&hearts;</div>
+            <div id='eightheart' onmouseup='cardPlaced(id)'>8&hearts;</div>
+            <div id='nineheart' onmouseup='cardPlaced(id)'>9&hearts;</div>
+            <div id='tenheart' onmouseup='cardPlaced(id)'>10&hearts;</div>
+            <div id='Jheart' onmouseup='cardPlaced(id)'>J&hearts;</div>
+            <div id='Qheart' onmouseup='cardPlaced(id)'>Q&hearts;</div>
+            <div id='Kheart' onmouseup='cardPlaced(id)'>K&hearts;</div>
+        </div><br>
+        <div id='clubs' class='suitRow'>
+            <div id='Aclub' onmouseup='cardPlaced(id)'>A&clubs;</div>
+            <div id='twoclub' onmouseup='cardPlaced(id)'>2&clubs;</div>
+            <div id='threeclub' onmouseup='cardPlaced(id)'>3&clubs;</div>
+            <div id='fourclub' onmouseup='cardPlaced(id)'>4&clubs;</div>
+            <div id='fiveclub' onmouseup='cardPlaced(id)'>5&clubs;</div>
+            <div id='sixclub' onmouseup='cardPlaced(id)'>6&clubs;</div>
+            <div id='sevenclub' class='sev' onmouseup='cardPlaced(id)'>7&clubs;</div>
+            <div id='eightclub' onmouseup='cardPlaced(id)'>8&clubs;</div>
+            <div id='nineclub' onmouseup='cardPlaced(id)'>9&clubs;</div>
+            <div id='tenclub' onmouseup='cardPlaced(id)'>10&clubs;</div>
+            <div id='Jclub' onmouseup='cardPlaced(id)'>J&clubs;</div>
+            <div id='Qclub' onmouseup='cardPlaced(id)'>Q&clubs;</div>
+            <div id='Kclub' onmouseup='cardPlaced(id)'>K&clubs;</div>
+        </div><br>
+        <div id='diamonds' class='suitRow'>
+            <div id='Adiamond' onmouseup='cardPlaced(id)'>A&diams;</div>
+            <div id='twodiamond' onmouseup='cardPlaced(id)'>2&diams;</div>
+            <div id='threediamond' onmouseup='cardPlaced(id)'>3&diams;</div>
+            <div id='fourdiamond' onmouseup='cardPlaced(id)'>4&diams;</div>
+            <div id='fivediamond' onmouseup='cardPlaced(id)'>5&diams;</div>
+            <div id='sixdiamond' onmouseup='cardPlaced(id)'>6&diams;</div>
+            <div id='sevendiamond' class='sev' onmouseup='cardPlaced(id)'>7&diams;</div>
+            <div id='eightdiamond' onmouseup='cardPlaced(id)'>8&diams;</div>
+            <div id='ninediamond' onmouseup='cardPlaced(id)'>9&diams;</div>
+            <div id='tendiamond' onmouseup='cardPlaced(id)'>10&diams;</div>
+            <div id='Jdiamond' onmouseup='cardPlaced(id)'>J&diams;</div>
+            <div id='Qdiamond' onmouseup='cardPlaced(id)'>Q&diams;</div>
+            <div id='Kdiamond' onmouseup='cardPlaced(id)'>K&diams;</div>
+        </div><br>
+        <div id='dealButton' onclick='deal()'>Deal</div><br>
+        <div id='userHand'>
+            
+        </div>
+        <div id='tooLateWindow' class='bgdShade'>
+            <div id='tooLateDiv' class='msg'>
+                <h3>Game In Progress</h3><br>
+                <button id='backToLogin' onclick='backToLogin()'>Back</button>
+            </div>
+        </div>
+        <div id='gameOverWindow' class='bgdShade'>
+            <div id='gameOverDiv' class='msg'>
+                <button id='joinNewRound' onclick='resetGame()'>Join new round</button>
+                <h3>Game Over</h3>
+                <div id='duck'>🦆</div><br>
+                <h4 id='playerWon'></h4>
+                <div id='pointSummary'></div>
+            </div>
+        </div>
+    </div>
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" 
+        integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" 
+        crossorigin="anonymous">
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+</body>
+</html>
