@@ -1,4 +1,4 @@
 # SevensCardGame
 Multiplayer version of the card game Sevens<br>
-hosted at: https://sevens-card-game.herokuapp.com
+hosted at: https://sevens-card-game.herokuapp.com <br>
 All users must be on same browser (Safari or Chrome), do not refresh the page mid-game. 
